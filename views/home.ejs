@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/home/index.css" />
+    <script>
+      const roomId = '<%= roomId %>';
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <p>I MEET</p>
+    </div>
+    <div class="body">
+      <div class="body-form">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <input
+                class="input is-primary mt-4"
+                type="text"
+                placeholder="Name"
+                id="userName"
+              />
+              <input
+                class="input is-primary mt-4"
+                type="email"
+                id="email"
+                placeholder="Email Address"
+              />
+              <p style="font-size: 12px; color: red" id="error-email"></p>
+              <input
+                class="input is-primary mt-4"
+                type="text"
+                placeholder="Room Id"
+                id="roomId"
+              />
+              <p style="font-size: 12px; color: #171515">
+                Note: Enter Room Id to join already created room or leave it
+                blank to start a new session
+              </p>
+              <button class="button is-primary mt-4" id="joinMeeting">
+                Join Meeting
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="body-image">
+        <img src="/assets/bg.jpeg" alt="pic" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

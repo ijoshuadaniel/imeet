@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/meet/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <script>
+      const name = '<%= name %>';
+      const email = '<%= email %>';
+      const roomId = '<%= id %>';
+    </script>
+  </head>
+  <body>
+    <div class="topnav">
+      <p class="topnav-name"><%=name%></p>
+      <div class="topnav-option">
+        <div></div>
+        <div>
+          <span
+            class="topnav-icons"
+            id="togglechat"
+            onclick="toggleChat()"
+          ></span>
+          <span
+            class="topnav-icons"
+            id="microphone"
+            onclick="handleMuted()"
+          ></span>
+          <span
+            class="topnav-icons"
+            id="showVideo"
+            onclick="handleVideo()"
+          ></span>
+          <button
+            class="button is-danger"
+            onclick="handleLeave()"
+            style="margin-left: 1rem"
+          >
+            <i class="fas fa-phone-slash rotate-icon"></i> Leave
+          </button>
+          <div class="modal" id="leave-modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="card">
+                <div class="card-content">
+                  <div class="content text-center">
+                    Are you sure want to leave meeting ?
+                  </div>
+                </div>
+                <footer class="card-footer">
+                  <span class="card-footer-item" onclick="leaveMeeting()"
+                    >Leave</span
+                  >
+                  <span class="card-footer-item" onclick="cancleLeave()"
+                    >Cancel</span
+                  >
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="main-video video-one">
+        <video id="myvideo"></video>
+      </div>
+      <div class="main-sidebar">
+        <div class="main-sidebar-participants" id="participants-window">
+          <p class="main-sidebar-participants-text">Participants</p>
+          <div id="all-participants"></div>
+        </div>
+        <div class="main-sidebar-chat none" id="chat-window">
+          <p class="main-sidebar-chat-text">Chat</p>
+          <div class="main-sidebar-chat-box">
+            <div class="main-sidebar-chat-box-area" id="chat-box-area"></div>
+            <div class="main-sidebar-chat-box-msg">
+              <input
+                class="input is-success"
+                type="text"
+                placeholder="Enter Message"
+                id="msg-text-box"
+              />
+              <button class="button is-primary" onclick="sendMessage()">
+                <i class="far fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/meet/index.js"></script>
+    <script src="/meet/domchanges.js"></script>
+  </body>
+</html>

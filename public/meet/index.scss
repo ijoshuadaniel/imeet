@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #171515;
+}
+
+.topnav {
+  width: 100vw;
+  height: 10vh;
+  box-shadow: 1px 1px 10px black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  &-name {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+  }
+}
+
+.main {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  &-video {
+    width: 80vw;
+    height: 100%;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: flex-start;
+    row-gap: 1rem;
+    column-gap: 1rem;
+  }
+  &-sidebar {
+    width: 20vw;
+    height: 100%;
+    border-left: 1px solid black;
+    &-participants {
+      padding: 1rem;
+      &-text {
+        color: white;
+      }
+    }
+    &-chat {
+      padding: 1rem;
+      &-text {
+        color: white;
+      }
+      &-box {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        &-area {
+          height: 73vh;
+          padding: 1rem 0rem;
+          overflow-y: scroll;
+        }
+        &-msg {
+          margin-top: 1rem;
+          display: flex;
+          input {
+            margin-right: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.top-icon {
+  color: white;
+  font-size: 20px;
+  padding: 0 1rem;
+  margin-top: 0.5rem;
+}
+
+.rotate-icon {
+  color: white;
+  font-size: 17px;
+  margin-right: 0.5rem;
+  transform: rotate(90deg);
+}
+
+video {
+  object-fit: cover !important;
+  width: 250px;
+  height: 200px;
+  border: 1px solid white;
+}
+
+#myvideo {
+  position: absolute;
+  bottom: 0%;
+  right: 21vw;
+  border: 1px solid white;
+  object-fit: cover;
+  width: 200px;
+  height: 150px;
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.all-participants {
+  overflow-y: scroll;
+  &-data {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid black;
+    span {
+      height: 2rem;
+      width: 2rem;
+      background-color: black;
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      color: white;
+    }
+  }
+  &-data2 {
+    margin-left: 1rem;
+    color: white;
+    display: block;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.message-box {
+  background-color: black;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: stretch;
+  p {
+    font-size: 12px;
+    color: white;
+  }
+}
